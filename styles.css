@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-left: 47rem;
+    padding-top: 5.7rem;
+}
+
+.bg{
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.1;
+    transition: opacity 400ms linear;
+}
+
+.bg.bg-1{
+    background-color: #EF9C9C;
+}
+
+.bg.bg-2{
+    background-color: #414141;
+}
+
+.bg.bg-3{
+    background-color: #7990A5;
+}
+
+.bg.bg-4{
+    background-color: #8FA9BE;
+}
+
+.bg.bg-5{
+    background-color: #A19790;
+}
+
+.bg.bg-6{
+    background-color: #9B9E9D;
+}
+
+.chairs{
+    position: absolute;
+    height: 25.625rem;
+    width: 31.25rem;
+    left: 18%;
+    top: 16%;
+    visibility: hidden;
+    transition: visibility 250ms linear;
+}
+
+.shades{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 0.4rem;
+    border: 2px solid transparent;
+    transition-property: border, transform;
+    transition-duration: 150ms;
+    transition-timing-function: linear;
+    margin-top: 0.75rem;
+}
+
+input{
+    visibility: hidden;
+}
+
+label{
+    margin-left: -1.1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.shade-selection:checked + label > .shades{
+    border: 2px solid rgb(65,65,67);
+    transform: scale(1.01,1.01);
+}
+
+.shade-selection:checked + label + .bg{
+    opacity: 1;
+}
+
+.shade-selection:checked + label + .bg + .chairs{
+    visibility: visible;
+    animation: shakeChair 250ms 2 linear;
+    transform-origin: top center;
+}
+
+.cart-btn{
+    height: 3rem;
+    width: 13.125rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding-top: 0.82rem;
+    padding-left: 3.2rem;
+    transition: background-color 400ms linear;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+.shade-selection:checked ~ .cart-btn:hover{
+    background-color: #333333;
+}
+
+.s1:checked ~ .cart-btn{
+    background-color: #86444D;
+}
+
+.s2:checked ~ .cart-btn{
+    background-color: #1A1A1A;
+}
+
+.s3:checked ~ .cart-btn{
+    background-color: #40566E;
+}
+
+.s4:checked ~ .cart-btn{
+    background-color: #5E89B2;
+}
+
+.s5:checked ~ .cart-btn{
+    background-color: #82766E;
+}
+
+.s6:checked ~ .cart-btn{
+    background-color: #5F6362;
+}
+
+.chair-info{
+    position: relative;
+    height: 27%;
+    margin-top: 1.5rem;
+}
+
+.desc-text{
+    position: absolute;
+    top: 50%;
+    font-size: 1rem;
+    font-weight: 500;
+    transition-property: transform, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
+    opacity: 0;
+}
+
+.dimensions{
+    position: absolute;
+    top: 40%;
+    display: flex;
+    gap: 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+    transition-property: transform, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
+    opacity: 0;
+}
+
+.val{
+    font-size: 1.875rem;
+}
+
+.info ~ label{
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-right: 1.5rem;
+}
+
+.info:not(:checked) + label{
+    color: rgba(255, 255, 255, 0.521);
+}
+
+.info:not(:checked) + label:hover{
+    color: rgba(255, 255, 255, 0.774);
+}
+
+.info:not(:checked) ~ div{
+    opacity: 0;
+} 
+
+.description:checked ~ .desc-text {
+    transform: translateY(-40%);
+    opacity: 1;
+} 
+
+.details:checked ~ .dimensions{
+    transform: translateY(-30%);
+    opacity: 1;
+}
+
+.main-heading{
+    font-size:0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+}
+
+.chair-name{
+    font-size: 2.125rem;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.selling-price{
+    font-size: 1.625rem;
+    font-weight: 500;
+    margin-right: 1.5rem;
+}
+
+.original-price{
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.521); 
+    text-decoration: line-through;
+}
+
+h4{
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+@keyframes shakeChair{
+    0%{
+        transform: translateX(0px) rotate(0deg);
+    }
+    10%{
+        transform: translateX(-7px) rotate(-2deg);
+    }
+    20%{
+        transform: translateX(7px) rotate(2deg);
+    }
+    30%{
+        transform: translateX(-7px) rotate(-2deg);
+    }
+    40%{
+        transform: translateX(7px) rotate(2deg);
+    }
+    50%{
+        transform: translateX(-7px,) rotate(-2deg);
+    }
+    60%{
+        transform: translateX(7px) rotate(2deg);
+    }
+    70%{
+        transform: translateX(-7px) rotate(-2deg);
+    }
+    80%{
+        transform: translateX(7px) rotate(2deg);
+    }
+    90%{
+        transform: translateX(-7px,) rotate(-2deg);
+    }
+    100%{
+        transform: translateX(7px) rotate(2deg);
+    }
+}
